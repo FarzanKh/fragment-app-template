@@ -22,13 +22,17 @@ public class ListFragment extends SherlockListFragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, 
-			Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.list_fragment, container, false);    	
-	}
-
-	public void setItems(ListItem[] items) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		
+		ListItem[] items = {
+				new ListItem("First item", "This is the first item"),
+				new ListItem("Second item", "This is the second item"),
+				new ListItem("Third item", "This is the third item")
+		};
+		
 		setListAdapter(new ListAdapter(getActivity(), R.layout.list_item, items));
+		
+		return inflater.inflate(R.layout.list_fragment, container, false);    	
 	}
 
 	@SuppressLint("NewApi")

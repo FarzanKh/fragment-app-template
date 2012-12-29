@@ -14,17 +14,6 @@ public class MainActivity extends SherlockFragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity);
-
-		ListItem[] items = {
-				new ListItem("First item", "This is the first item"),
-				new ListItem("Second item", "This is the second item"),
-				new ListItem("Third item", "This is the third item")
-		};
-
-		ListFragment fragment = (ListFragment)getSupportFragmentManager().findFragmentById(R.id.list_fragment);
-		if (fragment != null && fragment.isInLayout()) {
-			fragment.setItems(items);
-		}
 	}
 
 	// Menu
