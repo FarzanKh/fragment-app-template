@@ -21,7 +21,7 @@ The following libraries are used in this application:
 Screenshot
 ----------
 
-.. image:: http://raw.github.com/fragment-app-template/master/screenshot1.png
+.. image:: http://raw.github.com/cmatsuoka/fragment-app-template/master/screenshot1.png
 
 
 .. _ActionBarSherlock: http://actionbarsherlock.com/
