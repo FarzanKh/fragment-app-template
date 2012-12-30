@@ -8,7 +8,6 @@ import com.actionbarsherlock.view.MenuInflater;
 
 
 public class MainActivity extends SherlockFragmentActivity {
-	public static ListItem[] items;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
