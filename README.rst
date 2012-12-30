@@ -21,7 +21,7 @@ The following libraries are used in this application:
 Screenshot
 ----------
 
-.. image:: screenshot1.png
+.. image:: fragment-app-template/blob/master/screenshot1.png
 
 
 .. _ActionBarSherlock: http://actionbarsherlock.com/
