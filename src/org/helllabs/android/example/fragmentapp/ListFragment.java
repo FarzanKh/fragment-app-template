@@ -22,10 +22,7 @@ public class ListFragment extends SherlockListFragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		
-		
-		
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {		
 		return inflater.inflate(R.layout.list_fragment, container, false);    	
 	}
 
@@ -42,7 +39,7 @@ public class ListFragment extends SherlockListFragment {
 			startActivity(intent);
 		}	
 	}
-	
+
 	public void setList(ListItem[] items) {
 		setListAdapter(new ListAdapter(getActivity(), R.layout.list_item, items));
 	}

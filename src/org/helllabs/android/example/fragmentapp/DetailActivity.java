@@ -2,6 +2,7 @@ package org.helllabs.android.example.fragmentapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
@@ -10,6 +11,8 @@ import com.actionbarsherlock.view.MenuItem;
 
 
 public class DetailActivity extends SherlockFragmentActivity {
+	private DetailPagerAdapter pagerAdapter;
+	private ViewPager viewPager;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -20,9 +23,12 @@ public class DetailActivity extends SherlockFragmentActivity {
 		Bundle bundle = getIntent().getExtras();
 		int position = bundle.getInt("position", -1);
 
+		pagerAdapter = new DetailPagerAdapter(getSupportFragmentManager());
+		viewPager = (ViewPager) findViewById(R.id.pager);
+		viewPager.setAdapter(pagerAdapter);
+
 		if (position >= 0) {
-			DetailFragment fragment = (DetailFragment)getSupportFragmentManager().findFragmentById(R.id.detail_fragment);
-			fragment.displayDetail(position);
+			viewPager.setCurrentItem(position);
 		}
 	}
 
