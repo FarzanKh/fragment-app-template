@@ -24,13 +24,7 @@ public class ListFragment extends SherlockListFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		
-		ListItem[] items = {
-				new ListItem("First item", "This is the first item"),
-				new ListItem("Second item", "This is the second item"),
-				new ListItem("Third item", "This is the third item")
-		};
 		
-		setListAdapter(new ListAdapter(getActivity(), R.layout.list_item, items));
 		
 		return inflater.inflate(R.layout.list_fragment, container, false);    	
 	}
@@ -41,12 +35,16 @@ public class ListFragment extends SherlockListFragment {
 		DetailFragment fragment = (DetailFragment)getFragmentManager().findFragmentById(R.id.detail_fragment);
 		if (fragment != null && fragment.isInLayout()) {
 			v.setActivated(true);
-			fragment.displayDetail((ListItem)l.getItemAtPosition(position));
+			fragment.displayDetail(position);
 		} else {			
 			Intent intent = new Intent(getActivity(), DetailActivity.class);
-			intent.putExtra("item", ((ListItem)l.getItemAtPosition(position)));
+			intent.putExtra("position", position);
 			startActivity(intent);
 		}	
+	}
+	
+	public void setList(ListItem[] items) {
+		setListAdapter(new ListAdapter(getActivity(), R.layout.list_item, items));
 	}
 
 	// Menu

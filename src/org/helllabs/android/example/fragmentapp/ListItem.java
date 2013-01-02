@@ -1,10 +1,9 @@
 package org.helllabs.android.example.fragmentapp;
 
 import android.os.Parcel;
-import android.os.Parcelable;
 
 
-public class ListItem implements Parcelable, Comparable<ListItem> {
+public class ListItem implements Comparable<ListItem> {
 
 	private String name;
 	private String description;
@@ -26,30 +25,6 @@ public class ListItem implements Parcelable, Comparable<ListItem> {
 	public String getDescription() {
 		return description;
 	}
-	
-
-	// Parcelable methods
-
-	@Override
-	public int describeContents() {
-		return 0;
-	}
-
-	@Override
-	public void writeToParcel(Parcel out, int flags) {
-		out.writeString(name);
-		out.writeString(description);
-	}
-
-	public static final Creator<ListItem> CREATOR = new Parcelable.Creator<ListItem>() {
-		public ListItem createFromParcel(Parcel in) {
-			return new ListItem(in);
-		}
-
-		public ListItem[] newArray(int size) {
-			return new ListItem[size];
-		}
-	};
 
 	// Comparable methods
 

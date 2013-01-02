@@ -30,8 +30,8 @@ public class DetailFragment extends SherlockFragment {
 		return view;
 	}
 
-	public void displayDetail(ListItem item) {
-		currentItem = item;
+	public void displayDetail(int position) {
+		ListItem item = MainActivity.items[position];
 		setShareIntent();
 
 		View view = getView();
@@ -40,6 +40,8 @@ public class DetailFragment extends SherlockFragment {
 		nameText.setText(item.getName());
 		TextView descriptionText = (TextView)view.findViewById(R.id.description);
 		descriptionText.setText(item.getDescription());
+		
+		currentItem = item;
 	}
 
 

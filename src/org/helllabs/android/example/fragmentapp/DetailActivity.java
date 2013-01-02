@@ -2,7 +2,6 @@ package org.helllabs.android.example.fragmentapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
@@ -19,14 +18,11 @@ public class DetailActivity extends SherlockFragmentActivity {
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		Bundle bundle = getIntent().getExtras();
-		Log.i("asd", "bundle=" + bundle);
-		ListItem item = bundle.getParcelable("item");
-		Log.i("asd", "item=" + item);
+		int position = bundle.getInt("position", -1);
 
-		if (item != null) {
+		if (position >= 0) {
 			DetailFragment fragment = (DetailFragment)getSupportFragmentManager().findFragmentById(R.id.detail_fragment);
-			Log.i("asd", "fragment=" + fragment);
-			fragment.displayDetail(item);
+			fragment.displayDetail(position);
 		}
 	}
 
