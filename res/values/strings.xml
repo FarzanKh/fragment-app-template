@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Fragment App Template</string>
+    <string name="app_name">Fragment App</string>
     <string name="detail_activity_name">Details</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_share">Share</string>
