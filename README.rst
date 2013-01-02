@@ -1,11 +1,12 @@
-Fragment App Template
-=====================
+Fragment App
+============
 
-This is a template for an Android application using list and detail
+This is an example of an Android application using list and detail
 fragments. On small screen devices they'll be presented in two different
 activities, whereas in larger screens (such as in tablets) they'll be
 side-by-side in the same activity. Details for the item selected in
-the list fragment will appear in the detail fragment.
+the list fragment will appear in the detail fragment. In small screens
+details can be swiped left/right.
 
 
 Required libraries
