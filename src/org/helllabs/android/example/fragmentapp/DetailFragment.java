@@ -39,22 +39,20 @@ public class DetailFragment extends SherlockFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.detail_fragment, container, false);
-		position = getArguments() != null ? getArguments().getInt("position") : -1;
+		position = getArguments() != null ? getArguments().getInt("position") : 0;
 		return view;
 	}
-	
-    // makes the fragment visible to the user
-    @Override
-    public void onStart() {
-            super.onStart();
-            if (position >= 0) {
-                    displayDetail();
-            }
-    }
 
-    public void displayDetail() {
-    	displayDetail(position);
-    }
+	// makes the fragment visible to the user
+	@Override
+	public void onStart() {
+		super.onStart();
+		displayDetail();
+	}
+
+	public void displayDetail() {
+		displayDetail(position);
+	}
 
 	public void displayDetail(int position) {
 		ListItem item = MainActivity.items[position];
@@ -68,7 +66,7 @@ public class DetailFragment extends SherlockFragment {
 		descriptionText.setText(item.getDescription());
 
 		currentItem = item;
-		
+
 		setShareIntent();
 	}
 
@@ -77,9 +75,6 @@ public class DetailFragment extends SherlockFragment {
 
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		 if (position < 0)
-             return;
-
 		inflater.inflate(R.menu.detail_menu, menu);
 		MenuItem menuItem = menu.findItem(R.id.menu_share);		
 		shareActionProvider = (ShareActionProvider)menuItem.getActionProvider();
